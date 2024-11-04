@@ -3,7 +3,7 @@ package uml;
 public class Conta {
 
 	private String banco;
-	private double saldo;
+	private double saldo = 0;
 	private int agencia;
 	private int numeroConta;
 
@@ -34,9 +34,8 @@ public class Conta {
 
 	public boolean deposito(double valor) {
 		if (valor > 0) {
-			saldo += valor;
-			boolean depositou = true;
-			return depositou;
+			this.saldo += valor;
+			return true;
 		} else {
 			return false;
 		}
@@ -44,9 +43,8 @@ public class Conta {
 	
 	public boolean saque(double valor) {
 		if (saldo >= valor) {
-		boolean sacou = true;
-		saldo -= valor;
-		return sacou;
+		this.saldo -= valor;
+		return true;
 		} else {
 			return false;
 		}
@@ -65,8 +63,5 @@ public class Conta {
 		builder.append(numeroConta);
 		builder.append("]");
 		return builder.toString();
-	}
-	
-	
-	
+	}	
 }
