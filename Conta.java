@@ -1,4 +1,4 @@
-package uml;
+package generalizacao;
 
 public class Conta {
 
